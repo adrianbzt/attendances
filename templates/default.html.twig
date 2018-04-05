@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+
+    <title>
+        {% block title %}Test Application{% endblock %}
+    </title>
+</head>
+<body>
+<div id="sidebar">
+    {% block sidebar %}
+    {% endblock %}
+</div>
+
+<div id="content">
+    {% block body %}
+
+
+        <div id="react-checkout-root"
+             data-admin-name="{{ admin_name }}"
+             data-admin-email="{{ admin_email }}"
+        ></div>
+
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
+        <script type="application/javascript" src="{{ asset('build/app.js') }}"></script>
+
+    {% endblock %}
+</div>
+</body>
+</html>
